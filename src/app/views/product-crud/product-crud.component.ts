@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router'
 @Component({
   selector: 'app-product-crud',
   templateUrl: './product-crud.component.html',
@@ -7,16 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductCrudComponent implements OnInit {
 
-  atributoLegal = "qualquer"
-
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  fazerAlgo(): void {
-    console.log('Fazendo algo!')
+  navigateToProductCreate(): void {
+    this.router.navigate(['/products/create'])
   }
-
-  
 }
