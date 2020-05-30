@@ -17,7 +17,8 @@ export class ForDirective implements OnInit {
 
   ngOnInit(): void {
     for(let number of this.numbers){
-      this.container.createEmbeddedView(this.template)
+      this.container.createEmbeddedView(
+        this.template, { $implicit: number });
     }
     console.log(this.numbers);
   }
